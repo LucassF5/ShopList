@@ -1,0 +1,24 @@
+<%= form_with model: @produto, local: true do |form| %>
+  <% if @produto.errors.any? %>
+    <div class="alert alert-danger">
+      <h4><%= pluralize(@produto.errors.count, "erro") %> encontrado(s):</h4>
+      <ul>
+        <% @produto.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :nome, class: "form-label" %>
+    <%= form.text_field :nome, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :quantidade, class: "form-label" %>
+    <%= form.number_field :quantidade, class: "form-control" %>
+  </div>
+
+  <%= form.submit class: "btn btn-primary" %>
+<% end %>

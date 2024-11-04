@@ -1,0 +1,27 @@
+<h1>Lista de Produtos</h1>
+
+<p style="color: green"><%= notice %></p>
+<%= link_to 'Novo Produto', new_produto_path, class: 'btn btn-primary' %>
+
+<table class="table mt-4">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Quantidade</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @produtos.each do |produto| %>
+      <tr>
+        <td><%= produto.nome %></td>
+        <td><%= produto.quantidade %></td>
+        <td>
+          <%= link_to 'Exibir', produto_path(produto, class: 'btn btn-info btn-sm') %>
+          <%= link_to 'Editar', edit_produto_path(produto), class: 'btn btn-warning btn-sm' %>
+          <%= button_to 'Apagar', produto, method: :delete, class: 'btn btn-danger btn-sm' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
