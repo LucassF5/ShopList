@@ -2,6 +2,12 @@ source "https://rubygems.org"
 
 ruby "3.2.4"
 
+gem 'bootstrap'
+# Use the latest version of the Boostrap
+
+gem 'sassc-rails'
+
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.5"
 

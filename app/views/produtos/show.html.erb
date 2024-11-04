@@ -3,5 +3,7 @@
 <p><strong>Nome:</strong> <%= @produto.nome %></p>
 <p><strong>Quantidade:</strong> <%= @produto.quantidade %></p>
 
-<%= link_to 'Editar', edit_produto_path(@produto), class: 'btn btn-warning' %>
-<%= link_to 'Voltar à Lista', produtos_path, class: 'btn btn-secondary' %>
+<div class="d-flex gap-4">
+  <%= link_to 'Editar', edit_produto_path(@produto), class: 'btn btn-warning' %>
+  <%= link_to 'Voltar', produtos_path, class: 'btn btn-secondary' %>
+</div>
